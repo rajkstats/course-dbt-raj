@@ -1,0 +1,213 @@
+
+version: 2
+
+models:
+  - name: stg_addresses
+    columns:
+        - name: id
+          description: "Unique identifier"
+          tests:
+              - unique
+              - not_null
+
+        - name: address_id
+          description: "The primary key for this table"
+          tests:
+            - unique
+            - not_null
+
+        - name: address
+          description: ""
+
+        - name: zipcode
+          description: ""
+
+        - name: state
+          description: ""
+
+        - name: country
+          description: ""      
+
+  - name: stg_events
+    columns:
+        - name: id
+          description: "Unique Identifier"
+          tests:
+              - unique
+              - not_null
+            
+        - name: event_id
+          description: "The primary key for this table"
+          tests:
+            - unique
+            - not_null
+
+        - name: session_id
+          description: ""
+
+        - name: user_id
+          description: ""
+
+
+        - name: page_url
+          description: ""
+
+        - name: created_at
+          description: ""
+
+        - name: event_type
+          description: ""
+
+
+  - name: stg_order_items
+    columns:
+        - name: id
+          description: "Unique identifier"
+          tests:
+              - unique
+              - not_null
+
+        - name: order_id
+          description: "The primary key for this table"
+          tests:
+              - unique
+              - not_null
+
+
+        - name: product_id
+          description: ""
+
+
+        - name: quantity
+          description: ""
+
+  - name: stg_orders
+    columns:
+        - name: id
+          description: "Unique Identifier"
+          tests:
+              - unique
+              - not_null
+
+        - name: order_id
+          description: "The primary key for this table"
+          tests:
+            - unique
+            - not_null
+
+        - name: user_id
+          description: ""
+
+        - name: promo_id
+          description: ""
+
+        - name: address_id
+          description: ""
+
+        - name: created_at
+          description: ""
+
+        - name: order_cost
+          description: ""
+
+        - name: shipping_cost
+          description: ""
+
+        - name: order_total
+          description: ""
+
+        - name: tracking_id
+          description: ""
+
+        - name: shipping_service
+          description: ""
+
+        - name: estimated_delivery_at
+          description: ""
+
+        - name: delivered_at
+          description: ""
+
+        - name: status
+          description: ""      
+
+
+
+  - name: stg_products
+    columns:
+        - name: id
+          description: "Unique Identifier"
+          tests:
+              - unique
+              - not_null
+
+        - name: product_id
+          description: "The primary key for this table"
+          tests:
+            - unique
+            - not_null
+
+        - name: name
+          description: ""
+
+        - name: price
+          description: ""
+
+        - name: quantity
+          description: ""
+
+
+  - name: stg_promos
+    columns:
+        - name: id
+          description: "Unique identifier"
+          tests:
+              - unique
+              - not_null
+
+        - name: promo_id
+          description: "The primary key for this table" 
+          tests:
+            - unique
+            - not_null
+
+        - name: discount
+          description: ""
+
+        - name: status
+          description: ""  
+
+  - name: stg_users
+    columns:
+        - name: id
+          description: "Unique identifier"
+          tests:
+              - unique
+              - not_null
+
+        - name: user_id
+          description: "The primary key for this table"
+          tests:
+            - unique
+            - not_null
+
+        - name: first_name
+          description: ""
+
+        - name: last_name
+          description: ""
+
+        - name: email
+          description: ""
+
+        - name: phone_number
+          description: ""
+
+        - name: created_at
+          description: ""
+
+        - name: updated_at
+          description: ""
+
+        - name: address_id
+          description: ""

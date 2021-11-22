@@ -1,0 +1,42 @@
+version: 2
+
+sources:
+
+  - name: src_public # name of the source 
+    schema: public # this is the schema our raw data lives in
+    database: dbt # this is the name of our database
+
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+
+    freshness:
+      warn_after: {count: 24, period: hour}
+      error_after: {count: 48, period: hour}
+
+    tables:
+      - name: users
+        loaded_at_field: created_at
+        description: >
+          Contains information about each user
+      - name: addresses
+        description: >
+          Contains address information about each user    
+      - name: events
+        loaded_at_field: created_at      
+        description: >
+          Contains the event level information for each user's session
+      - name: orders
+        loaded_at_field: created_at      
+        description: >
+          Contains all the order related information   
+      - name: order_items
+        description: >
+          Contains information about the order items and the quantity ordered 
+      - name: products
+        description: >
+          Contains product related information for each product
+      - name: promos
+        description: >
+          Contains all the information about the promos         
