@@ -7,7 +7,8 @@
 SELECT count(distinct user_id) as num_users
 FROM dbt_raj_k_stg.stg_users
 ```
-*Answer*: We have **130** users 
+**Answer**: 
+We have **130** users 
 
 - On average, how many orders do we receive per hour?
 
@@ -23,7 +24,8 @@ WITH num_orders_by_hour AS (
 SELECT round(avg(num_orders),0) as avg_num_orders_received_per_hr
 FROM num_orders_by_hour
 ```
-*Answer*: We receive **8 orders** on an average per hour
+**Answer**: 
+We receive **8 orders** on an average per hour
 
 
 
@@ -43,7 +45,9 @@ WHERE status= 'delivered'
 SELECT round(avg(time_taken_for_delivery_in_days)::numeric,2)
 FROM  time_taken_for_delivery_in_days
 ```
-*Answer*: On an average, it takes **3.93 days** for an order from being placed to delivered
+
+**Answer**: 
+On an average, it takes **3.93 days** for an order from being placed to delivered
 
 
 
@@ -70,6 +74,8 @@ GROUP BY 1
 ORDER BY 2
 
 ```
+**Answer**: 
+
 | num_purchases  | num_users  | 
 | :------------ |:---------------:| 
 | one_purchase      | 25 | 
@@ -92,4 +98,5 @@ SELECT round(avg(num_unique_sessions),2) as avg_unique_sessions_per_hr
 FROM num_sessions_by_hour
 
 ```
-*Answer*: On an average, we receive **7.39 sessions** per hour
+**Answer**: 
+On an average, we receive **7.39 sessions** per hour
