@@ -70,13 +70,17 @@ GROUP BY 1
 ORDER BY 2
 
 ```
+| num_purchases  | num_users  | 
+| :------------ |:---------------:| 
+| one_purchase      | 25 | 
+| two_purchases      | 22       | 
+| three_plus_purchases  | 81        |
 
 
 
 - On average, how many unique sessions do we have per hour?
 
 ```sql
-// fails - Message: Use "sql" tag
 
 WITH num_sessions_by_hour AS (
     SELECT  date_trunc('hour', created_at) as hr, 
