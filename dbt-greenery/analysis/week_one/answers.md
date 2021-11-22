@@ -51,7 +51,7 @@ FROM  time_taken_for_delivery_in_days
 
 ```sql
 
-`WITH num_orders_by_users AS(
+WITH num_orders_by_users AS(
     SELECT 
     user_id,
     count(distinct order_id) as num_orders
@@ -67,7 +67,7 @@ END as num_purchases,
 count(user_id ) as num_users
 FROM num_orders_by_users 
 GROUP BY 1
-ORDER BY 2`
+ORDER BY 2
 
 ```
 
@@ -78,14 +78,14 @@ ORDER BY 2`
 ```sql
 // fails - Message: Use "sql" tag
 
-`WITH num_sessions_by_hour AS (
+WITH num_sessions_by_hour AS (
     SELECT  date_trunc('hour', created_at) as hr, 
     count(distinct session_id) as num_unique_sessions
     FROM dbt_raj_k_stg.stg_events
     GROUP BY 1
 )
 SELECT round(avg(num_unique_sessions),2) as avg_unique_sessions_per_hr
-FROM num_sessions_by_hour`
+FROM num_sessions_by_hour
 
 ```
 *Answer*: On an average, we receive **7.39 sessions** per hour
