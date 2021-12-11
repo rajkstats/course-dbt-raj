@@ -1,10 +1,16 @@
+{{
+  config(
+    materialized='view'
+  )
+}}
+
 with products_source as (
 
     select * from {{ source('src_public', 'products') }}
 
 )
 
-,   renamed_casted as (
+,   renamed_products as (
 
     select
           id
@@ -12,8 +18,9 @@ with products_source as (
         , name
         , price
         , quantity
+  
     from products_source
 
 )
 
-select * from renamed_casted
+select * from renamed_products

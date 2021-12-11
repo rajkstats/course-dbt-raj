@@ -1,14 +1,20 @@
+{{
+  config(
+    materialized='view'
+  )
+}}
+
 with order_items_source as (
 
     select * from {{ source('src_public', 'order_items') }}
 
 )
 
-,   renamed_casted as (
+,   renamed_order_items as (
 
     select
           id
-        , order_id
+        , order_id as order_guid
         , product_id
         , quantity
 
@@ -16,4 +22,4 @@ with order_items_source as (
 
 )
 
-select * from renamed_casted
+select * from renamed_order_items

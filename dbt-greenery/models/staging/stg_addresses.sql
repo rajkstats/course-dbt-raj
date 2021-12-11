@@ -1,14 +1,20 @@
+{{
+  config(
+    materialized='view'
+  )
+}}
+
 with addresses_source as (
 
     select * from {{ source('src_public', 'addresses') }}
 
 )
 
-,   renamed_casted as (
+,   renamed_addresses as (
 
     select
         id
-        , address_id
+        , address_id as address_guid
         , address
         , zipcode
         , state
@@ -18,4 +24,4 @@ with addresses_source as (
 
 )
 
-select * from renamed_casted
+select * from renamed_addresses 

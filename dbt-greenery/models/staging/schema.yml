@@ -10,7 +10,7 @@ models:
               - unique
               - not_null
 
-        - name: address_id
+        - name: address_guid
           description: "The primary key for this table"
           tests:
             - unique
@@ -67,10 +67,9 @@ models:
               - unique
               - not_null
 
-        - name: order_id
+        - name: order_guid
           description: "The primary key for this table"
           tests:
-              - unique
               - not_null
 
 
@@ -89,7 +88,7 @@ models:
               - unique
               - not_null
 
-        - name: order_id
+        - name: order_guid
           description: "The primary key for this table"
           tests:
             - unique
@@ -179,13 +178,13 @@ models:
 
   - name: stg_users
     columns:
-        - name: id
+        - name: user_id
           description: "Unique identifier"
           tests:
               - unique
               - not_null
 
-        - name: user_id
+        - name: user_guid
           description: "The primary key for this table"
           tests:
             - unique

@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: fct_user_orders
+    description: ""
+    columns:
+      - name: user_guid
+        description: ""
+
+      - name: num_orders
+        description: "" 
+
+  - name: int_user_sessions_activity
+    description: ""
+    columns:
+      - name: user_id
+        description: ""
+
+      - name: session_id
+        description: ""
+
+      - name: shopping_activity
+        description: ""
+
+      - name: buying_activity
+        description: ""
+
+  - name: fct_user_sessions
+    description: ""
+    columns:
+
+      - name: session_id
+        description: ""
+
+      - name: user_guid
+        description: ""
+     
+      - name: email
+        description: ""  
+
+      - name: shopping_activity
+        description: ""
+
+      - name: buying_activity
+        description: ""

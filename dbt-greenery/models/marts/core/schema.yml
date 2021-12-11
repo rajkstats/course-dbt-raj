@@ -1,0 +1,109 @@
+version: 2
+
+models:
+  - name: dim_users
+    description: "At the user granularity, contains data thats relevant at the user level"
+    columns:
+      - name: user_guid
+        description: primary key
+        tests:
+          - unique
+          - not_null
+        relationships:
+            to: ref('stg_users')
+            field: user_guid
+
+      - name: first_name
+        description: Customer's first name
+        tests:
+          - not_null
+
+      - name: last_name
+        description: Customer's last name
+        tests:
+          - not_null
+      
+      - name: email
+        description: Customer's email
+        tests:
+          - unique
+          - not_null
+
+      - name: phone_number
+        description: Customer's phone number    
+
+      - name: zipcode
+        description: Customer's zipcode
+        tests:
+          - not_null          
+
+      - name:  state
+        description: Customer's state
+        tests:
+          - not_null        
+
+      - name: country
+        description: ""
+        tests:
+          - not_null
+
+  - name: dim_products
+    columns:
+      - name: product_guid
+        description:  "" 
+        tests:
+          - unique
+          - not_null
+      
+      - name: name
+        description:    ""   
+        tests:
+          - not_null
+
+      - name:  product_in_stock
+        description:  "" 
+      
+  - name: fct_orders
+    columns:
+      - name: order_guid
+        description:  "" 
+        tests:
+          - unique
+          - not_null
+      
+      - name: user_guid
+        description:   ""    
+        tests:
+          - not_null
+
+      - name: created_at_utc
+        description:  "" 
+        
+      - name: order_cost
+        description:   ""   
+        tests:
+          - not_null   
+
+      - name: shipping_cost
+        description:  "" 
+        tests:
+          - not_null   
+
+      - name: order_total
+        description:   ""    
+        tests:
+          - not_null   
+
+      - name: order_status
+        description:  ""            
+        tests:
+          - not_null   
+
+      - name: num_items
+        description: ""       
+        tests:
+          - not_null       
+    
+    
+    
+
