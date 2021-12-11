@@ -68,9 +68,7 @@ Explain the marts models you added. Why did you organize the models in the way y
     - dbt docs serve --no-browser
     **Answer**: 
 
-<p align="left">
-   <img width="460" height="300" src="dbt-greenery/short-answers/wk_2/wk2_dag.png">
-</p>
+![DAG](wk2_dag.png)
 
 
 ## Part 2 (Tests)
