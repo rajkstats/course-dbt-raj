@@ -15,7 +15,7 @@ This repo is part of course work for *Analytics engineering with dbt course* by 
 - Final models should be saved in ```models/final``` and are by default generated as tables.
 
 ### ERD 
-![ERD](dbt-greenery/raw_erd.png)
+![ERD](raw_erd.png)
 
 ### Coding Conventions
 [dbt coding conventions](https://github.com/fishtown-analytics/corp/blob/master/dbt_coding_conventions.md)
@@ -25,4 +25,3 @@ This repo is part of course work for *Analytics engineering with dbt course* by 
 - [Brooklyn Data co](https://github.com/brooklyn-data/co/blob/main/sql_style_guide.md)
 - [Git lab](https://about.gitlab.com/handbook/business-technology/data-team/platform/sql-style-guide/)
 - [dbt labs](https://github.com/dbt-labs/corp/blob/master/dbt_style_guide.md)
-
