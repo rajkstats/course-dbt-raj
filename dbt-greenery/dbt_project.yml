@@ -44,4 +44,9 @@ models:
   #     marketing:
   #       +schema: marketing
   #     product:
-  #       +schema : product  
+  #       +schema : product 
+  # post-hook is called every time a single model runs 
+  post-hook:
+    - "GRANT SELECT ON {{this}} TO reporting"
+on-run-end:
+    - "GRANT USAGE ON SCHEMA {{schema}} TO reporting"

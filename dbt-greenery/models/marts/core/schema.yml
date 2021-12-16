@@ -52,6 +52,10 @@ models:
       - name: product_guid
         description:  "" 
         tests:
+          - dbt_expectations.expect_column_distinct_count_to_equal_other_table:
+              column_name: product_guid
+              compare_model: ref("stg_products")
+              compare_column_name: product_id
           - unique
           - not_null
       
