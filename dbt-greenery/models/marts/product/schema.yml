@@ -38,6 +38,37 @@ models:
       - name: page_url
         description: ""
 
+  - name: int_product_funnel_daily
+    description: ""
+    columns:
 
-        
-  
+      - name: created_at_utc
+        description: ""
+
+      - name: unique_sessions
+        description: ""
+
+      - name: sessions_w_has_add2cart_checkout_pgview
+        description: ""
+
+      - name: sessions_w_add2cart_checkout
+        description: ""
+
+      - name: sessions_w_checkout
+        description: ""
+
+  - name: product_funnel
+    description: ""
+    columns:
+
+      - name: per_session_w_pgview
+        description: ""
+
+      - name: per_sessions_w_has_add2cart_checkout_pgview
+        description: ""
+
+      - name: per_sessions_w_add2cart_checkout
+        description: ""
+
+      - name: per_sessions_w_checkout
+        description: ""

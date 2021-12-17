@@ -1,0 +1,15 @@
+version: 2
+
+exposures:
+
+- name: Product Funnel Dashboard
+  type: dashboard
+  maturity: medium
+  description: >
+    Models that are citical to our product funnel dashboard
+  depends_on:
+    - ref('product_funnel') 
+    - ref('int_product_funnel_daily') 
+  owner:
+    name: Raj
+    email: raj@greenery.com
